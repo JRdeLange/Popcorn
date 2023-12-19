@@ -14,7 +14,7 @@ var lid = Matter.Bodies.rectangle(400, 100, 600, 40);
 
 // Spawn 50 circles in random positions above the container
 var kernels = [];
-for (var i = 0; i < 1000; i++) {
+for (var i = 0; i < 700; i++) {
     var circle = Matter.Bodies.circle(
         Matter.Common.random(200, 600),
         Matter.Common.random(300, 400),
@@ -59,7 +59,7 @@ Matter.Events.on(engine, 'beforeUpdate', function() {
     var currentTime = Date.now();
     var seconds = (currentTime - startTime) / 1000; // Convert milliseconds to seconds
     // For each kernel in kernels
-    var chance = 0.0001 * Math.pow(1.4, seconds)
+    var chance = 0.0001 * Math.pow(1.4, 1.5*seconds)
     
     document.getElementById("trick").innerHTML = chance;
     // Do nothing on less then 6 seconds
